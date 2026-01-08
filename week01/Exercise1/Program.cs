@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("Exercise 1");
         Console.Write("What is your first name? ");
         string firstName = Console.ReadLine();
 
