@@ -21,5 +21,12 @@ class Program
         job2._startYear = 2025;
         job2._endYear = 2026;
         job2.Display();
+
+        Console.WriteLine();    
+        Resume resume1 = new Resume();
+        resume1._name = "Shania Esguerra";
+        resume1._jobs.Add(job1);
+        resume1._jobs.Add(job2);
+        resume1.Display();
     }
 }
