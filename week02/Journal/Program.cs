@@ -19,16 +19,19 @@ class Program
         prompts._prompts.Add("What was the best meal you had today?");
         prompts._prompts.Add("How are you really feeling today?");
         prompts._prompts.Add("Where did you want to go today?");
+        prompts._prompts.Add("What was the best part of your day?");
+        prompts._prompts.Add("What was the most memorable thing you have?");
 
         while (userChoice != 5)
         {
+            Console.WriteLine("-------------------------------------------");
             Console.WriteLine("Please Select One of the following choices:");
             Console.WriteLine("1.Write");
             Console.WriteLine("2.Display");
             Console.WriteLine("3.Load");
             Console.WriteLine("4.Save");
             Console.WriteLine("5.Quit");
-
+            Console.WriteLine("-------------------------------------------");
             Console.Write("What would you like to do? ");
             userChoice = int.Parse(Console.ReadLine());
 
@@ -66,10 +69,14 @@ class Program
             else if (userChoice == 3)
             {
                 //Load a journal option
+                Console.WriteLine("What is the filename you want to load?");
+                journal.LoadFromFile(Console.ReadLine());
             }
             else if (userChoice == 4)
             {
                 //Save journal option
+                Console.WriteLine("What is the filename you want to save it as?");
+                journal.SaveFile(Console.ReadLine());
             }
             else if (userChoice == 5)
             {

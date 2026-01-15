@@ -29,7 +29,7 @@ public class Journal
     }
     public void LoadFromFile(string filename)
     {
-        Console.WriteLine("Reading list from file...");
+        Console.WriteLine("Loading file...");
         //Clear list
         _entries.Clear();
 
@@ -49,5 +49,6 @@ public class Journal
             //Add to array
             _entries.Add(displayEntry);
         }
+        Console.WriteLine("File Loaded...");
     }
 }
