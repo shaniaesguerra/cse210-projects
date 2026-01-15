@@ -6,12 +6,19 @@ class Program
     static void Main(string[] args)
     {
         Journal journal = new Journal();
-        Entry entry = new Entry();
+        journal._entries = new List<Entry>();
+
+        Entry entry;
         PromptGenerator prompts = new PromptGenerator();
         DateTime currentTime = DateTime.Now;
+
         int userChoice = -1;
 
         //Make the prompts
+        prompts._prompts = new List<string>();
+        prompts._prompts.Add("What was the best meal you had today?");
+        prompts._prompts.Add("How are you really feeling today?");
+        prompts._prompts.Add("Where did you want to go today?");
 
         while (userChoice != 5)
         {
@@ -28,11 +35,33 @@ class Program
             if (userChoice == 1)
             {
                 //Write an entry option
+                //Create a new Entry
+                entry = new Entry();
 
+                //Get date today
+                string dateText = currentTime.ToShortDateString();
+                entry._date = dateText;
+
+                //Get new prompt 
+                string newPrompt = prompts.GetRandomPrompt();
+                entry._promptText = newPrompt;
+
+                //Print random prompt
+                Console.WriteLine(newPrompt);
+
+                //Ask user's entry
+                Console.Write("> ");
+                entry._entryText = Console.ReadLine();
+
+                //entry.Display(); //for debugging
+
+                //Add entry to journal
+                journal.AddEntry(entry);
             }
             else if (userChoice == 2)
             {
-                //Display option
+                //Display all journal entries
+                journal.DisplayAll();
             }
             else if (userChoice == 3)
             {
