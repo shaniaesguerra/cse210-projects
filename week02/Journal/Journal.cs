@@ -1,7 +1,7 @@
 
 public class Journal
 {
-    public List<Entry> _entries = new List<Entry>();
+    public List<Entry> _entries;
     public void AddEntry(Entry newEntry)
     {
         _entries.Add(newEntry); //add to list of entries
@@ -33,7 +33,7 @@ public class Journal
         Console.WriteLine("Reading list from file...");
         //Clear list
         _entries.Clear();
-        
+
         //Store each line in the file in a string array
         string[] lines = System.IO.File.ReadAllLines(filename);
         foreach (string line in lines)
