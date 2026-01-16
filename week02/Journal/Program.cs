@@ -18,17 +18,14 @@ class Program
 
         Entry entry;
         PromptGenerator prompts = new PromptGenerator();
+        const string promptsFilename = "prompts.txt";
         DateTime currentTime = DateTime.Now;
 
         int userChoice = -1;
 
-        //Make the prompts
+        //Load in the prompts
         prompts._prompts = new List<string>();
-        prompts._prompts.Add("What was the best meal you had today?");
-        prompts._prompts.Add("How are you really feeling today?");
-        prompts._prompts.Add("Where did you want to go today?");
-        prompts._prompts.Add("What was the best part of your day?");
-        prompts._prompts.Add("What was the most memorable thing you have?");
+        prompts.LoadPrompts(promptsFilename);
 
         while (userChoice != 5)
         {
