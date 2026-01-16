@@ -3,7 +3,7 @@ public class PromptGenerator
     public List<string> _prompts;
     public void LoadPrompts(string filename)
     {
-        Console.WriteLine("Loading Prompts...");
+        //Console.WriteLine("Loading Prompts..."); debugging
         //Make sure list is clear
         _prompts.Clear();
 
@@ -14,7 +14,7 @@ public class PromptGenerator
             //Add each line to the list
             _prompts.Add(line);
         }
-        Console.WriteLine("Prompts Loaded...");
+        //Console.WriteLine("Prompts Loaded...");
     }
     public string GetRandomPrompt()
     {
