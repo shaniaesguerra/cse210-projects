@@ -8,6 +8,7 @@ Description: App that contains features of a Journal where entries can be writte
              saved, loaded, and displayed through the choice of the user.
 Enhancement: 
     - Added a feature in PrompGenerator.cs where prompts will be loaded from a text file.
+    - Added a feature in Entry.cs to display the time the journal entry was written.
 */
 class Program
 {
@@ -47,15 +48,16 @@ class Program
                 entry = new Entry();
 
                 //Get date today
-                string dateText = currentTime.ToShortDateString();
-                entry._date = dateText;
+                entry._date = currentTime.ToShortDateString();
+
+                //get time today
+                entry._time = currentTime.ToShortTimeString();
 
                 //Get new prompt 
-                string newPrompt = prompts.GetRandomPrompt();
-                entry._promptText = newPrompt;
+                entry._promptText = prompts.GetRandomPrompt();
 
                 //Print random prompt
-                Console.WriteLine(newPrompt);
+                Console.WriteLine(entry._promptText);
 
                 //Ask user's entry
                 Console.Write("> ");

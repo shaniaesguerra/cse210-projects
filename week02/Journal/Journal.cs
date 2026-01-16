@@ -16,14 +16,13 @@ public class Journal
     public void SaveFile(string filename)
     {
         Console.WriteLine("Saving to file..."); //for debugging
-        using (StreamWriter outputFile = new StreamWriter(filename))
+        using (StreamWriter outputFile = new StreamWriter(filename, true)) //true = append data
         {
             //Add the entries to the file
             foreach (Entry e in _entries)
             {
-                outputFile.WriteLine($"{e._date}~~{e._promptText}~~{e._entryText}");
+                outputFile.WriteLine($"{e._date}~~{e._time}~~{e._promptText}~~{e._entryText}");
             }
-
         }
         Console.WriteLine("Saved!"); //for debugging
     }
@@ -43,8 +42,9 @@ public class Journal
             //make new entry
             Entry displayEntry = new Entry();
             displayEntry._date = parts[0];
-            displayEntry._promptText = parts[1];
-            displayEntry._entryText = parts[2];
+            displayEntry._time = parts[1];
+            displayEntry._promptText = parts[2];
+            displayEntry._entryText = parts[3];
 
             //Add to array
             _entries.Add(displayEntry);
