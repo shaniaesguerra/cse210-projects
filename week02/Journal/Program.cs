@@ -1,6 +1,14 @@
 using System;
 using System.IO;
 
+/*
+Author: Shania Arvie S. Esguerra
+Purpose: W02 - Journal App Project
+Description: App that contains features of a Journal where entries can be written,
+             saved, loaded, and displayed through the choice of the user.
+Enhancement: 
+    - Added a feature in PrompGenerator.cs where prompts will be loaded from a text file.
+*/
 class Program
 {
     static void Main(string[] args)
