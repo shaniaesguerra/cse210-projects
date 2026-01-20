@@ -1,3 +1,6 @@
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
+
 public class Fraction
 {
     private int _top;
@@ -38,6 +41,19 @@ public class Fraction
     public void SetBottom(int bottom)
     {
         _bottom = bottom;
+    }
+
+    //Methods
+    public void GetFractionString()
+    {
+        string fractionText = $"{_top}/{_bottom}";
+        Console.WriteLine(fractionText);
+    }
+
+    public double GetDecimalValue()
+    {
+        double result = (double)_top / (double)_bottom;
+        return result;
     }
 
 }
