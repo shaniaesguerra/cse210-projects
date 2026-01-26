@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 public class Scripture
 {
     private Reference _reference;
@@ -6,8 +8,9 @@ public class Scripture
     //Constructors
     public Scripture(Reference reference, string text)
     {
-        string[] wordsInText = text.Split(" ");
+        string[] wordsInText = text.Split(" "); //split verse into words
 
+        //add words to the list
         foreach (string wordText in wordsInText)
         {
             Word wordToAdd = new Word(wordText);
@@ -25,6 +28,12 @@ public class Scripture
         Word wordToHide = _words[numberToHide];
         wordToHide.Hide();
     }
+
+    public int GetVerseLength()
+    {
+        return _words.Count();
+    }
+
     public string GetDisplayText()
     {
         string text = "";
@@ -35,6 +44,7 @@ public class Scripture
 
         return $"{_reference.GetDisplayText()} {text}";
     }
+
     public bool IsCompletelyHidden()
     {
         int hiddenWordCount = 0;
@@ -55,4 +65,5 @@ public class Scripture
             return false;
         }
     }
+
 }

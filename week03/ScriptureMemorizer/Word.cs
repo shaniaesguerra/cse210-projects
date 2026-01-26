@@ -18,6 +18,7 @@ public class Word
         {
             hiddenText += "_";
         }
+        _text = hiddenText;
 
         _isHidden = true;
     }
