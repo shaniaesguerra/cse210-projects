@@ -6,22 +6,53 @@ public class Scripture
     //Constructors
     public Scripture(Reference reference, string text)
     {
-        Word word = new Word(text);
+        string[] wordsInText = text.Split(" ");
+
+        foreach (string wordText in wordsInText)
+        {
+            Word wordToAdd = new Word(wordText);
+            //add word in list
+            _words.Add(wordToAdd);
+        }
+
+        //Assign reference
         _reference = reference;
-        _words.Add(word);
     }
 
     //Methods
-    private void HideRandomWords(int numberToHide)
+    public void HideRandomWords(int numberToHide)
     {
-
+        Word wordToHide = _words[numberToHide];
+        wordToHide.Hide();
     }
     public string GetDisplayText()
     {
-        return "";
+        string text = "";
+        foreach (Word word in _words)
+        {
+            text += $"{word.GetDisplayText()} ";
+        }
+
+        return $"{_reference.GetDisplayText()} {text}";
     }
     public bool IsCompletelyHidden()
     {
-        return true;
+        int hiddenWordCount = 0;
+        foreach (Word wordText in _words)
+        {
+            if (wordText.isHidden() == true)
+            {
+                hiddenWordCount += 1;
+            }
+        }
+
+        if (hiddenWordCount == _words.Count())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -10,20 +10,27 @@ public class Word
     }
 
     //Methods
-    private void Hide()
+    public void Hide()
     {
+        //Turns letters in text into underscores
+        string hiddenText = "";
+        foreach (char letters in _text)
+        {
+            hiddenText += "_";
+        }
 
+        _isHidden = true;
     }
-    private void Show()
+    public void Show()
     {
-
+        _isHidden = false;               
     }
-    private bool isHidden()
+    public bool isHidden()
     {
         return _isHidden;
     }
     public string GetDisplayText()
     {
-        return "";
+        return _text;
     }
 }
