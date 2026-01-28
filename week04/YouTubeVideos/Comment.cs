@@ -8,4 +8,14 @@ public class Comment
         _nameOfPerson = nameOfPerson;
         _commentText = comment;
     }
+
+    public string GetName()
+    {
+        return _nameOfPerson;
+    }
+
+    public string GetCommentText()
+    {
+        return _commentText;
+    }
 }
