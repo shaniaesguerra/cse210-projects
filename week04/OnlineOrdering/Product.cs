@@ -17,4 +17,9 @@ public class Product
     {
         return _price * (double)_quantity;
     }
+
+    public void GetProductLabel()
+    {
+        Console.WriteLine($"{_name} ({_productID})");
+    }
 }
