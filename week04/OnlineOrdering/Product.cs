@@ -20,6 +20,6 @@ public class Product
 
     public void GetProductLabel()
     {
-        Console.WriteLine($"{_name} ({_productID})");
+        Console.WriteLine($"{_name} ({_productID}) === ${_price}  QNTY:{_quantity}");
     }
 }
