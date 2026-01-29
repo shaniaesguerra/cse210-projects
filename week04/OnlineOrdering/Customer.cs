@@ -10,7 +10,7 @@ public class Customer
         _name = name;
         _address = address;
     }
-    
+
     public bool IsCustomerInUSA()
     {
         if (_address.IsInUSA())
@@ -18,5 +18,11 @@ public class Customer
             return true;
         }
         else return false;
+    }
+    
+    public void GetShippingInfo()
+    {
+        Console.WriteLine(_name);
+        Console.WriteLine(_address.GetAddress());
     }
 }
