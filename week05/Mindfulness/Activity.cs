@@ -23,7 +23,11 @@ public class Activity
 
     public void DisplayEndingMessage()
     {
-
+        Console.WriteLine();
+        Console.WriteLine("Great Job!!");
+        ShowSpinner(3);
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
+        ShowSpinner(3);
     }
 
     public void ShowSpinner(int seconds)
@@ -40,7 +44,7 @@ public class Activity
         animationStr.Add("\\");
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(10);
+        DateTime endTime = startTime.AddSeconds(seconds);
 
         while (DateTime.Now < endTime)
         {
@@ -52,9 +56,18 @@ public class Activity
             }
         }
     }
-    
+
     public void ShowCountDown(int seconds)
     {
-        
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds);
+
+        while (DateTime.Now < endTime)
+        {
+            Console.Write(seconds);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+            seconds--;
+        }
     }
 }
