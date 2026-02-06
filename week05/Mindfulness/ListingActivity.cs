@@ -50,7 +50,7 @@ public class ListingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            Console.Write(">>");
+            Console.Write(">> ");
             list.Add(Console.ReadLine());
         }
 
