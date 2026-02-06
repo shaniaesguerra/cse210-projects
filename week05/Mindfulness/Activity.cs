@@ -1,5 +1,3 @@
-using Microsoft.VisualBasic;
-
 public class Activity
 {
     private string _name;
