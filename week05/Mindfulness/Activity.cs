@@ -32,14 +32,10 @@ public class Activity
     {
         // |/-\|/-\ ==> spinner
         List<string> animationStr = new List<string>();
-        animationStr.Add("|");
         animationStr.Add("/");
         animationStr.Add("-");
         animationStr.Add("\\");
         animationStr.Add("|");
-        animationStr.Add("/");
-        animationStr.Add("-");
-        animationStr.Add("\\");
 
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds);
