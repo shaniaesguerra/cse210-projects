@@ -4,7 +4,7 @@ public class Activity
 {
     private string _name;
     private string _description;
-    private int _duration;
+    protected int _duration;
 
     public Activity(string name, string description)
     {
@@ -16,7 +16,7 @@ public class Activity
     {
         Console.Clear();
         Console.WriteLine($"Welcome to the {_name}");
-        Console.WriteLine($"\n{_description}");
+        Console.WriteLine($"\n{_description}\n");
         Console.Write("How long, in seconds, would you like to do this activity? ");
         _duration = int.Parse(Console.ReadLine());
     }
@@ -51,7 +51,7 @@ public class Activity
             foreach (string s in animationStr)
             {
                 Console.Write(s);
-                Thread.Sleep(500);
+                Thread.Sleep(600);
                 Console.Write("\b \b");
             }
         }
