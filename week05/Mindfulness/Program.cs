@@ -16,9 +16,14 @@ class Program
         // breathingActivity.DisplayEndingMessage();
 
         ReflectingActivity reflectingActivity = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
-        reflectingActivity.DisplayStartingMessage();
-        reflectingActivity.Run();
-        reflectingActivity.DisplayEndingMessage();
+        // reflectingActivity.DisplayStartingMessage();
+        // reflectingActivity.Run();
+        // reflectingActivity.DisplayEndingMessage();
+
+        ListingActivity listingActivity = new ListingActivity("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+        listingActivity.DisplayStartingMessage();
+        listingActivity.Run();
+        listingActivity.DisplayEndingMessage();
 
     }
 }
