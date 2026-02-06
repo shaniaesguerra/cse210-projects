@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 public class ReflectingActivity : Activity
 {
     private List<string> _prompts = new List<string>();
@@ -28,20 +30,30 @@ public class ReflectingActivity : Activity
     public void Run()
     {
         Console.Clear();
+        Console.WriteLine("Get Ready... ");
+        Console.WriteLine("Reflect on the following prompt:");
+        Console.WriteLine("");
         DisplayPrompt();
         Console.WriteLine("");
-        Console.WriteLine("Reflect on the following questions...");
-        Console.Write("Get Ready... ");
-        ShowSpinner(5);
-        Console.WriteLine("\n");
+        Console.WriteLine("When you have something in mind, press enter to continue.");
 
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(_duration);
-
-        while (DateTime.Now < endTime)
+        //wait for user to press enter
+        ConsoleKeyInfo userKeyPress = Console.ReadKey(true);
+        if (userKeyPress.Key == ConsoleKey.Enter)
         {
-            DisplayQuestions();
-            ShowSpinner(6);
+            Console.WriteLine("Next, ponder on each of the following questions as they relate to this experience.");
+            Console.Write("You may begin in: ");
+            ShowCountDown(5);
+            Console.Clear();
+
+            DateTime startTime = DateTime.Now;
+            DateTime endTime = startTime.AddSeconds(_duration);
+
+            while (DateTime.Now < endTime)
+            {
+                DisplayQuestions();
+                ShowSpinner(6);
+            }
         }
 
     }
@@ -66,11 +78,11 @@ public class ReflectingActivity : Activity
 
     private void DisplayPrompt()
     {
-        Console.WriteLine(GetRandomPrompt());
+        Console.WriteLine($"|==== {GetRandomPrompt()} ===|");
     }
     
     private void DisplayQuestions()
     {
-        Console.WriteLine($"- {GetRandomQuestion()}");
+        Console.WriteLine($">> {GetRandomQuestion()}");
     }
 }
