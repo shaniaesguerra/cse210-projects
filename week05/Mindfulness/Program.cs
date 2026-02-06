@@ -1,5 +1,13 @@
 using System;
 
+/*
+Author: Shania Arvie S. Esguerra
+Purpose: W05 - Mindfulness Project
+Description: App that contains features that promote Mindfulness. Activities that are featured
+          are breathing activities, reflecting activities, and listing activity.
+Enhancement: 
+    - Added meaningful animations in Breathing Activity class
+*/
 class Program
 {
     static void Main(string[] args)
