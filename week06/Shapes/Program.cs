@@ -9,5 +9,11 @@ class Program
         double sqArea = square.GetArea();
 
         Console.WriteLine($"Sqauare: color = {sqColor}, area = {sqArea}");
+
+        Rectangle rectangle = new Rectangle("orange", 7, 5);
+        string rectColor = rectangle.GetColor();
+        double rectArea = rectangle.GetArea();
+        Console.WriteLine($"Rectangle: color = {rectColor}, area = {rectArea}");
+
     }
 }

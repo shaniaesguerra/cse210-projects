@@ -12,7 +12,7 @@ public class Shape
         return _color;
     }
 
-    public void SetColor(string color)
+    private void SetColor(string color)
     {
         _color = color;
     }
