@@ -8,7 +8,7 @@ public class EternalGoal : Goal
     public override void RecordEvent()
     {
         //shows points added:
-        Console.WriteLine($"Congratulations! You have earned 🌟{_points} points!🌟");
+        Console.WriteLine($"Congratulations! You have earned 🌟 {_points} points! 🌟");
     }
 
     public override bool IsComplete()

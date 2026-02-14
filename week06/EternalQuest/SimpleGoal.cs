@@ -11,7 +11,7 @@ public class SimpleGoal : Goal
     {
         _isComplete = true; // finished the simple goal
 
-        Console.WriteLine($"Congratulations! You have earned 🌟{_points} points!🌟");
+        Console.WriteLine($"Congratulations! You have earned 🌟 {_points} points! 🌟");
     }
 
     public override bool IsComplete()

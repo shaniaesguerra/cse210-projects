@@ -14,12 +14,12 @@ public class ChecklistGoal : Goal
     public override void RecordEvent()
     {
         _amountCompleted += 1; //add to the amount of times completed
-        Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        Console.WriteLine($"Congratulations! You have earned 🌟 {_points} points! 🌟");
 
         if(IsComplete() == true)
         {
             Console.WriteLine($"Awesome! You have earned 🎉⭐ {_bonus} bonus points ⭐🎉 for reaching your target!");
-            Console.WriteLine($"Congratulations! You have earned 🌟{int.Parse( _points) + _bonus} points!🌟");
+            Console.WriteLine($"Congratulations! You have earned 🌟 {int.Parse( _points) + _bonus} points! 🌟");
         }
     }
 
