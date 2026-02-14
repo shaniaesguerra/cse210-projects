@@ -17,9 +17,9 @@ public class GoalManager
 
         while (userInput != 6)
         {
-            Console.WriteLine($"\nYou have {_score} points.\n");
+            DisplayPlayerInfo();
 
-            Console.WriteLine("Menu Options:");
+            Console.WriteLine("\nMenu Options:");
             Console.WriteLine("   1. Create new Goal");
             Console.WriteLine("   2. List Goals");
             Console.WriteLine("   3. Save Goals");
@@ -67,7 +67,42 @@ public class GoalManager
 
     public void DisplayPlayerInfo()
     {
-        Console.WriteLine($"Score: {_score}");
+        Console.WriteLine($"\nYou have {_score} points.");
+        AchievementChecker();
+    }
+
+    //ENHANCEMENT FEATURE:
+    public void AchievementChecker()
+    {
+        Console.WriteLine("Achievements: ");
+        List<string> achievements = new List<string>();
+
+        //Checks for score milestones and shows rewards:
+        if (_score >= 100)
+        {
+            achievements.Add("  > [ 🥉 Novice Goal Achiever 🤓 ] -- Get a score of 100");
+        }
+        if (_score >= 500)
+        {
+            achievements.Add("  > [ 🌳 🏔️ Goal Climber 🏔️ 🌳 ] -- Get a score of 500");
+        }
+        if (_score >= 1000)
+        {
+            achievements.Add("  > [ 🥈 Intermediate Goal Achiever ] -- Get a score of 1,000");
+        }
+        if (_score >= 5000)
+        {
+            achievements.Add("  > [ 🧗🏼‍♂️ Serious Goal Climber 🏔️ 🚶🏽 ] -- Get a score of 5,000");
+        }
+        if (_score >= 10000)
+        {
+            achievements.Add("  > [ 🥇 Expert Goal Achiever 🏆 ] -- Get a score of 10,000");
+        }
+
+        foreach (string achievement in achievements)
+        {
+            Console.WriteLine(achievement);
+        }
     }
 
     public void ListGoalNames()
