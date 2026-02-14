@@ -7,16 +7,17 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-
+        //shows points added:
+        Console.WriteLine($"Congratulations! You have earned 🌟{_points} points!🌟");
     }
 
     public override bool IsComplete()
     {
-        return true;
+        return false; // eternal goal is never completed
     }
 
     public override string GetStringRepresentation()
     {
-        return "Eternal Goal";
+        return $"EternalGoal:{_shortName},{_description},{_points}";
     }
 }

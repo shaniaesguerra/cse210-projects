@@ -13,21 +13,37 @@ public class ChecklistGoal : Goal
 
     public override void RecordEvent()
     {
+        _amountCompleted += 1; //add to the amount of times completed
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
 
+        if(IsComplete() == true)
+        {
+            Console.WriteLine($"Awesome! You have earned 🎉⭐ {_bonus} bonus points ⭐🎉 for reaching your target!");
+            Console.WriteLine($"Congratulations! You have earned 🌟{int.Parse( _points) + _bonus} points!🌟");
+        }
     }
 
     public override bool IsComplete()
     {
-        return true;
+        if (_amountCompleted == _target)
+        {
+            // if all items in checklist is completed:
+            return true; 
+        }
+        else
+        {
+            //otherwise:
+            return false;
+        }
     }
 
     public override string GetDetailsString()
     {
-        return $"Checklist Goal | Done: {_amountCompleted}";
+        return $"[ ] {_shortName} ({_description}) -- Currently completed: {_amountCompleted}/{_target}";
     }
 
     public override string GetStringRepresentation()
     {
-        return $"Checklist Goal | Done: {_amountCompleted}";
+        return $"ChecklistGoal:{_shortName},{_description},{_points},{_bonus},{_target},{_amountCompleted}";
     }
 }
