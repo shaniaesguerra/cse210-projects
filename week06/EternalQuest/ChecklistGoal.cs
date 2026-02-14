@@ -14,12 +14,16 @@ public class ChecklistGoal : Goal
     public override void RecordEvent()
     {
         _amountCompleted += 1; //add to the amount of times completed
-        Console.WriteLine($"Congratulations! You have earned 🌟 {_points} points! 🌟");
-
-        if(IsComplete() == true)
+        if (IsComplete() == true)
         {
-            Console.WriteLine($"Awesome! You have earned 🎉⭐ {_bonus} bonus points ⭐🎉 for reaching your target!");
-            Console.WriteLine($"Congratulations! You have earned 🌟 {int.Parse( _points) + _bonus} points! 🌟");
+            Console.WriteLine($"Congratulations! You have earned 🌟 {_points} points! 🌟");
+            Console.WriteLine($"You also earned 🎉⭐ {_bonus} bonus points ⭐🎉 for reaching your target!");
+            int totalPoints = int.Parse(_points) + _bonus;
+            _points = totalPoints.ToString();
+        }
+        else
+        {
+            Console.WriteLine($"Congratulations! You have earned 🌟 {_points} points! 🌟");
         }
     }
 
@@ -39,11 +43,23 @@ public class ChecklistGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"[ ] {_shortName} ({_description}) -- Currently completed: {_amountCompleted}/{_target}";
+        if (IsComplete() == false)
+        {
+            return $"[ ] {_shortName} ({_description}) -- Currently completed: {_amountCompleted}/{_target}";
+        }
+        else
+        {
+            return $"[X] {_shortName} ({_description}) -- Currently completed: {_amountCompleted}/{_target}";
+        }
     }
 
     public override string GetStringRepresentation()
     {
         return $"ChecklistGoal:{_shortName},{_description},{_points},{_bonus},{_target},{_amountCompleted}";
+    }
+
+    public void SetAmountCompleted(int amount)
+    {
+        _amountCompleted = amount;
     }
 }
