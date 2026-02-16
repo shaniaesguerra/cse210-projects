@@ -2,8 +2,8 @@ using System.Diagnostics.CodeAnalysis;
 
 public abstract class Activity
 {
-    private string _date;
-    private int _lengthInMinutes;
+    protected string _date;
+    protected int _lengthInMinutes;
 
     public Activity(string date, int lengthInMinutes)
     {

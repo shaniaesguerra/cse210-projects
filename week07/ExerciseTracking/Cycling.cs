@@ -8,12 +8,12 @@ public class Cycling : Activity
     }
     public override void GetSummary()
     {
-        Console.WriteLine($"{GetDate()} Cycling ({GetLength()})- Distance:{CalculateDistance()} km, Speed:{CalculateSpeed()} kph, Pace:{CalculatePace()} min per km");
+        Console.WriteLine($"{GetDate()} Cycling ({GetLength()} min)- Distance:{CalculateDistance()} km, Speed:{CalculateSpeed()} kph, Pace:{CalculatePace()} min per km");
     }
 
     public override double CalculateDistance()
     {
-        return _speed * GetLength() / 60;
+        return _speed * this.GetLength() / 60;
     }
     public override double CalculateSpeed()
     {

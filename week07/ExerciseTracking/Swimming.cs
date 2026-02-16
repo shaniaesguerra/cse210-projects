@@ -8,23 +8,23 @@ public class Swimming : Activity
 
     public override void GetSummary()
     {
-        Console.WriteLine($"{GetDate()} Swimming ({GetLength()})- Distance:{CalculateDistance()} km, Speed:{CalculateSpeed()} kph, Pace:{CalculatePace()} min per km");
+        Console.WriteLine($"{GetDate()} Swimming ({GetLength()} min)- Distance:{CalculateDistance()} km, Speed:{CalculateSpeed()} kph, Pace:{CalculatePace()} min per km");
     }
 
     public override double CalculateDistance()
     {
-        return _numberOfLaps * 50 / 1000;
+        return (double)_numberOfLaps * 50 / 1000;
     }
     public override double CalculateSpeed()
     {
-        double distance = CalculateDistance();
-        double minutes = GetLength();
+        double distance = (double)CalculateDistance();
+        double minutes = this.GetLength();
         return distance  / minutes * 60;
     }
     public override double CalculatePace()
     {
-        double distance = CalculateDistance();
-        double minutes = GetLength();
+        double distance = (double)CalculateDistance();
+        double minutes = this.GetLength();
         return minutes / distance;
     }
 }

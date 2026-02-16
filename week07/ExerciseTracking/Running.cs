@@ -7,7 +7,7 @@ public class Running : Activity
     }
     public override void GetSummary()
     {
-        Console.WriteLine($"{GetDate()} Running ({GetLength()})- Distance:{CalculateDistance()} km, Speed:{CalculateSpeed()} kph, Pace:{CalculatePace()} min per km");
+        Console.WriteLine($"{GetDate()} Running ({GetLength()} min)- Distance:{CalculateDistance()} km, Speed:{CalculateSpeed()} kph, Pace:{CalculatePace()} min per km");
     }
 
     public override double CalculateDistance()
@@ -16,10 +16,10 @@ public class Running : Activity
     }
     public override double CalculateSpeed()
     {
-        return _distance / GetLength() * 60;
+        return _distance / this.GetLength() * 60;
     }
     public override double CalculatePace()
     {
-        return GetLength() / _distance;
+        return this.GetLength() / _distance;
     }
 }
